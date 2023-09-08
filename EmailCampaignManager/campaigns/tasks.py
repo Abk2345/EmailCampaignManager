@@ -25,6 +25,7 @@ def send_daily_campaigns():
             'html_content': campaign.html_content,
         })
 
+        # convert to safe html format
         email_html = mark_safe(email_html)
 
         # Create an EmailMultiAlternatives object for sending HTML emails
@@ -41,7 +42,7 @@ def send_daily_campaigns():
         # Send the email
         email.send()
 
-    print("All done")
+    print("Send Email Daily Function Done!")
 
 # send campaign email using url, using shared task of celery for optimization
 @shared_task

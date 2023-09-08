@@ -3,6 +3,7 @@ import threading
 from django.conf import settings
 from campaigns.views import trigger_send_campaign
 
+# processing the given campaign_id to send the mail using threading concepts
 def process_email_campaign(campaign_id):
     # campaign = Campaign.objects.get(id=campaign_id)
     print("process started")
@@ -10,6 +11,7 @@ def process_email_campaign(campaign_id):
     print("process ended")
     #  have to see whether it will work
 
+# subscribing to redis
 def subscribe_to_email_campaigns():
     print("subscribe started")
     r = redis.StrictRedis(
